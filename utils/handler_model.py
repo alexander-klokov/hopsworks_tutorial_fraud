@@ -25,7 +25,7 @@ def make_model_schema(X_train, y_train):
 
 def register(project, model, model_schema, metrics, input_example):
 
-    if os.path.isdir(model_dir) == False:
+    if not os.path.isdir(model_dir):
         os.mkdir(model_dir)
 
     joblib.dump(model, model_dir + '/xgboost_fraud_batch_model.pkl')
